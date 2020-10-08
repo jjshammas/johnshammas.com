@@ -5,14 +5,16 @@ module.exports = {
 		DIST: "dist",
 	},
 
-	PORT: 0615,
+	PORT: 2310,
 
 	META: {
-		viewport: "width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0",
+		viewport:
+			"width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0",
 	},
 
 	TITLE: "John Shammas: Creative Leader and Strategist",
-	DESCRIPTION: "I use design and software to help teams solve complex business, sales, and financial problems.",
+	DESCRIPTION:
+		"I use design and software to help teams solve complex business, sales, and financial problems.",
 	NAME: "John Shammas",
-	HOST: "johnshammas.com"
+	HOST: "johnshammas.com",
 };

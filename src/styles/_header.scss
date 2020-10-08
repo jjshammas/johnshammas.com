@@ -1,0 +1,39 @@
+header {
+	padding: 10px 0;
+	display: flex;
+	color: #fefefd;
+	font-size: em(16);
+	align-items: center;
+	@include text-style-secondary();
+
+	@include size-med() {
+		padding: 20px 0;
+	}
+
+	@include size-lg() {
+		padding: 30px 0;
+	}
+
+	svg:not(:root) {
+		width: 40px;
+
+		path {
+			fill: #fefefd;
+		}
+	}
+}
+
+.email::after {
+	// MAYBE this helps with spam…who knows :)
+	content: attr(data-user) "@" attr(data-host) "." attr(data-tld);
+}
+
+.brand-area {
+	flex: 1;
+	line-height: 0;
+}
+
+.header-item {
+	margin-left: em(50, 16);
+	margin-top: -2px;
+}

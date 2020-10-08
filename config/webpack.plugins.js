@@ -15,7 +15,7 @@ const clean = new CleanWebpackPlugin();
 // I'll expand this later to loop over all HTML pages if I need more than just root
 const html = new HtmlWebpackPlugin({
 	filename: "index.html",
-	template: "index.html",
+	template: "index.ejs",
 	inject: true,
 	meta: config.META,
 });

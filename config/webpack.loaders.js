@@ -21,7 +21,7 @@ const postcssLoader = {
 	loader: "postcss-loader",
 	options: {
 		postcssOptions: {
-			plugins: ["autoprefixer"],
+			plugins: ["autoprefixer", "postcss-combine-media-query"],
 		},
 	},
 };
@@ -31,9 +31,19 @@ const cssLinkLoader = {
 	options: {},
 };
 
+const htmlLoader = {
+	loader: "ejs-compiled-loader",
+	options: {},
+};
+
 const styleRule = {
 	test: /\.s[ac]ss$/i,
 	use: [cssLinkLoader, cssLoader, postcssLoader, sassLoader],
 };
 
-module.exports = [styleRule];
+const partialsRule = {
+	test: /\.ejs$/i,
+	use: [htmlLoader],
+};
+
+module.exports = [styleRule, partialsRule];

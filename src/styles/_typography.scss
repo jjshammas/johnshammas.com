@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Inter:wght@400;700&display=swap");
+
+html {
+	font-size: 16px;
+	line-height: 1.45;
+	font-family: $font-primary;
+	color: $color-text-body;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	font-size: em(18, 16);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-primary;
+	color: $color-text-header;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+@mixin text-style-secondary() {
+	font-family: $font-secondary;
+	font-weight: 500;
+}

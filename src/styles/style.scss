@@ -1,12 +1,10 @@
-::placeholder {
-	color: gray;
-}
+@import "~normalize-scss";
+@include normalize();
 
-.image {
-	color: red;
-}
-@media (min-resolution: 2dppx) {
-	.image {
-		color: black;
-	}
-}
+@import "functions/em-calculator";
+
+@import "variables";
+@import "typography";
+@import "global";
+
+@import "header";
