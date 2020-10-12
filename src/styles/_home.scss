@@ -49,7 +49,7 @@ section {
 
 .hero-text {
 	flex: 1;
-	padding-right: 60px;
+	padding-right: em(60);
 }
 
 .hero-image-wrapper {
@@ -62,4 +62,70 @@ section {
 	background-size: 100%;
 	background-repeat: no-repeat;
 	@include image("../images/self");
+}
+
+.home-role {
+	align-items: center;
+
+	@include size-lg() {
+		display: flex;
+	}
+}
+
+.home-role-text {
+	flex: 1;
+	padding-right: em(60);
+}
+
+.home-role-logo {
+	width: 146px;
+	height: 30px;
+	margin-top: em(50);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	@include image("../images/dw-logo");
+}
+
+.home-role-images {
+	flex-basis: 50%;
+	display: flex;
+	margin-top: em(80);
+
+	@include size-med() {
+		padding: 0 em(40);
+	}
+
+	@include size-lg() {
+		padding: em(20) 0;
+	}
+}
+
+.home-role-images-positioner {
+	flex: 1;
+	border-radius: 8px;
+	box-shadow: 0 8px 34px rgba(0, 0, 0, 0.2);
+
+	> div {
+		width: 100%;
+		padding-bottom: 141.49%; // original size is 241x341
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+
+	&:nth-child(1) {
+		transform: scale(1.07) translateY(-3%);
+		z-index: 100;
+
+		> div {
+			@include image("../images/home-role-screen-1");
+		}
+	}
+
+	&:nth-child(2) {
+		transform: scale(1.07) translateY(3%);
+
+		> div {
+			@include image("../images/home-role-screen-2");
+		}
+	}
 }
