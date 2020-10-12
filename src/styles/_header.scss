@@ -34,6 +34,10 @@ header {
 }
 
 .header-item {
-	margin-left: em(50, 16);
+	margin-left: em(30, 16);
 	margin-top: -2px;
+
+	@include size-lg() {
+		margin-left: em(50, 16);
+	}
 }

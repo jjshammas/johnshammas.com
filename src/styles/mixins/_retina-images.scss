@@ -1,0 +1,17 @@
+@mixin image($url, $extension: "png") {
+	background-image: url("#{$url}.#{$extension}");
+
+	@media only screen and (-o-min-device-pixel-ratio: 5/4),
+		only screen and (-webkit-min-device-pixel-ratio: 1.25),
+		only screen and (min-device-pixel-ratio: 1.25),
+		only screen and (min-resolution: 1.25dppx) {
+		background-image: url("#{$url}@2x.#{$extension}");
+	}
+
+	@media only screen and (-o-min-device-pixel-ratio: 9/4),
+		only screen and (-webkit-min-device-pixel-ratio: 2.25),
+		only screen and (min-device-pixel-ratio: 2.25),
+		only screen and (min-resolution: 2.25dppx) {
+		background-image: url("#{$url}@3x.#{$extension}");
+	}
+}

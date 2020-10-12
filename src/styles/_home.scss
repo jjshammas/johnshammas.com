@@ -1,0 +1,65 @@
+section {
+	padding: 40px 0;
+
+	@include size-med() {
+		padding: 60px 0;
+	}
+
+	@include size-lg() {
+		padding: 80px 0;
+	}
+}
+
+.section-label {
+	@include text-style-secondary();
+	font-size: em(16);
+	padding-top: em(16, 16);
+	border-top: 1px solid #909ed1;
+	color: #909ed1;
+	width: 70%;
+	max-width: 300px;
+	margin-bottom: em(50, 16);
+}
+
+.section-desc {
+	@include size-lg() {
+		max-width: 450px;
+	}
+}
+
+.h1-dimmed {
+	color: #d3d5de;
+}
+
+.hero {
+	align-items: center;
+
+	@include size-lg() {
+		display: flex;
+	}
+
+	p {
+		font-size: em(22);
+
+		@include size-xl() {
+			font-size: em(22);
+		}
+	}
+}
+
+.hero-text {
+	flex: 1;
+	padding-right: 60px;
+}
+
+.hero-image-wrapper {
+	flex-basis: 40%;
+}
+
+.hero-image {
+	// original image is 484 x 400, use ratio to keep outer div in correct proportions
+	padding-bottom: 121%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	@include image("../images/self");
+}

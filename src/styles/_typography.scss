@@ -9,7 +9,21 @@ html {
 }
 
 body {
-	font-size: em(18, 16);
+	font-size: em(16, 16);
+
+	@include size-med() {
+		font-size: em(17, 16);
+	}
+
+	@include size-lg() {
+		font-size: em(18, 16);
+	}
+}
+
+@mixin text-style-secondary() {
+	font-family: $font-secondary;
+	font-weight: 500;
+	letter-spacing: em(0.8);
 }
 
 h1,
@@ -24,7 +38,25 @@ h6 {
 	line-height: 1.2;
 }
 
-@mixin text-style-secondary() {
-	font-family: $font-secondary;
-	font-weight: 500;
+h1 {
+	font-size: em(40);
+	letter-spacing: em(-2, 60);
+
+	@include size-lg() {
+		font-size: 4.9vw;
+	}
+
+	@include size-xl() {
+		font-size: em(60);
+	}
+}
+
+h2 {
+	font-size: em(34);
+	letter-spacing: em(-0.5, 34);
+	margin: em(20, 34) 0;
+}
+
+p {
+	margin: 1em 0;
 }

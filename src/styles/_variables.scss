@@ -3,13 +3,13 @@ $color-bg: #11131b;
 $color-text-body: #ccced2;
 $color-text-header: #fefefd;
 
-$font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-	Helvetica, Arial, sans-serif;
+$font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial,
+	sans-serif;
 $font-secondary: "Inconsolata", Monaco, Courier, monospace;
 
 $breakpoint-med: 480px;
 $breakpoint-lg: 820px;
-$breakpoint-xl: 1200px;
+$breakpoint-xl: 1240px;
 
 @mixin size-med {
 	@media screen and (min-width: $breakpoint-med) {

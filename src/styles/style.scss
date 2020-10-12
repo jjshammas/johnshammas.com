@@ -2,9 +2,11 @@
 @include normalize();
 
 @import "functions/em-calculator";
+@import "mixins/retina-images";
 
 @import "variables";
 @import "typography";
 @import "global";
 
 @import "header";
+@import "home";

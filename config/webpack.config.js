@@ -11,7 +11,8 @@ module.exports = {
 	],
 	output: {
 		path: path.join(config.ROOT, config.PATHS.DIST),
-		filename: "[name].[hash].js",
+		filename: "assets/[name].[hash].js",
+		publicPath: "/",
 	},
 	mode: process.env.NODE_ENV,
 	devServer: {

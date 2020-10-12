@@ -5,13 +5,16 @@ body {
 .container {
 	margin: 0 auto;
 	padding: 0 20px;
-	max-width: $breakpoint-xl;
+	max-width: $breakpoint-xl - 40px;
 
 	@include size-med() {
 		padding: 0 40px;
+		max-width: $breakpoint-xl - 80px;
 	}
 
 	@include size-lg() {
 		padding: 0 80px;
+		padding: 0 6vw;
+		max-width: $breakpoint-xl - 160px;
 	}
 }

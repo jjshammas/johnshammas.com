@@ -28,12 +28,23 @@ const postcssLoader = {
 
 const cssLinkLoader = {
 	loader: MiniCssExtractPlugin.loader,
-	options: {},
+	options: {
+		publicPath: "",
+	},
 };
 
 const htmlLoader = {
 	loader: "ejs-compiled-loader",
 	options: {},
+};
+
+const imagesLoader = {
+	loader: "file-loader",
+	options: {
+		outputPath: "assets",
+		name: "[name].[ext]",
+		publicPath: "/assets",
+	},
 };
 
 const styleRule = {
@@ -46,4 +57,9 @@ const partialsRule = {
 	use: [htmlLoader],
 };
 
-module.exports = [styleRule, partialsRule];
+const imagesRule = {
+	test: /\.(png|jpe?g|gif)$/i,
+	use: [imagesLoader],
+};
+
+module.exports = [styleRule, partialsRule, imagesRule];

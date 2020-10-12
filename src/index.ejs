@@ -8,6 +8,12 @@
 		/>
 	</head>
 	<body>
-		<div class="container"><%- require("./partials/header.ejs")() %></div>
+		<div class="container">
+			<%- require("./partials/header.ejs")() %>
+			<main>
+				<%- require("./partials/hero.ejs")() %>
+				<%- require("./partials/role.ejs")() %>
+			</main>
+		</div>
 	</body>
 </html>
