@@ -16,12 +16,14 @@ section {
 	padding-top: em(16, 16);
 	border-top: 1px solid #909ed1;
 	color: #909ed1;
-	width: 70%;
+	width: 30vw;
 	max-width: 300px;
 	margin-bottom: em(50, 16);
 }
 
 .section-desc {
+	margin-bottom: em(40);
+
 	@include size-lg() {
 		max-width: 450px;
 	}
@@ -127,5 +129,93 @@ section {
 		> div {
 			@include image("../images/home-role-screen-2");
 		}
+	}
+}
+
+.home-countries {
+	@include size-lg() {
+		display: flex;
+	}
+}
+
+.home-countries-list {
+	@include text-style-secondary();
+	color: #858999;
+	font-size: em(16);
+
+	@include size-lg() {
+		margin-right: 8vw;
+	}
+
+	@include size-xl() {
+		margin-right: 100px;
+	}
+
+	ul {
+		margin: 0;
+		margin-bottom: em(30);
+		padding: 0;
+		text-align: center;
+
+		@include size-lg() {
+			text-align: left;
+			margin-bottom: 0;
+		}
+	}
+
+	li {
+		display: inline;
+		list-style-type: none;
+		margin: 0 em(10);
+		padding: 0;
+		line-height: 1.7;
+
+		@include size-lg() {
+			display: block;
+			margin: 0;
+		}
+	}
+}
+
+.home-countries-map {
+	flex: 1;
+	position: relative;
+	margin: 0 -10px;
+}
+
+.home-countries-map-base {
+	width: 100%;
+	padding-bottom: 49.59%; // original is 793x393
+	background-repeat: no-repeat;
+	background-size: 100%;
+	opacity: 0.5; // should fix this from original file
+
+	@include image("../images/map");
+}
+
+@keyframes reveal-map-overlay {
+	from {
+		bottom: 100%;
+	}
+	to {
+		bottom: 0;
+	}
+}
+
+.home-countries-map-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 100%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+	@include image("../images/map-colored-overlay");
+
+	&.-animated {
+		// steps looks slightly better, but browser support is meh
+		animation: reveal-map-overlay 2s 1s forwards;
+		animation: reveal-map-overlay 2s 1s steps(50) forwards;
 	}
 }
