@@ -219,3 +219,20 @@ section {
 		animation: reveal-map-overlay 2s 1s steps(50) forwards;
 	}
 }
+
+.home-bio {
+}
+
+.home-bio-main {
+	font-size: em(16);
+
+	@include size-lg() {
+		column-count: 2;
+		column-gap: em(60);
+		column-rule-width: 0;
+
+		p:first-child {
+			margin-top: 0;
+		}
+	}
+}
