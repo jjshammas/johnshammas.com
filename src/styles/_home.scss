@@ -16,9 +16,13 @@ section {
 	padding-top: em(16, 16);
 	border-top: 1px solid #50929a;
 	color: #50929a;
-	width: 30vw;
-	max-width: 300px;
+	width: 60vw;
 	margin-bottom: em(50, 16);
+
+	@include size-med() {
+		width: 35vw;
+		max-width: 300px;
+	}
 }
 
 .section-desc {

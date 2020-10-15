@@ -45,3 +45,11 @@ header {
 		margin-left: em(50, 16);
 	}
 }
+
+.header-location {
+	display: none;
+
+	@include size-med() {
+		display: block;
+	}
+}
