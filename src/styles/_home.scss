@@ -12,10 +12,10 @@ section {
 
 .section-label {
 	@include text-style-secondary();
-	font-size: em(16);
+	font-size: em(17);
 	padding-top: em(16, 16);
-	border-top: 1px solid #909ed1;
-	color: #909ed1;
+	border-top: 1px solid #50929a;
+	color: #50929a;
 	width: 30vw;
 	max-width: 300px;
 	margin-bottom: em(50, 16);
@@ -221,6 +221,9 @@ section {
 }
 
 .home-bio {
+	.section-desc {
+		margin-bottom: em(20);
+	}
 }
 
 .home-bio-main {
@@ -247,7 +250,7 @@ section {
 }
 
 .home-speaking-item {
-	margin: em(20) 0;
+	margin: em(25) 0;
 
 	@include size-med() {
 		display: flex;
@@ -267,7 +270,7 @@ section {
 	font-size: em(16);
 
 	@include size-med() {
-		margin-right: em(20, 16);
+		margin-right: em(30, 16);
 	}
 }
 
@@ -288,15 +291,6 @@ section {
 	// font-weight: 700;
 	font-size: em(16);
 	margin-top: em(10);
-
-	a {
-		color: $color-primary;
-	}
-
-	.icon {
-		padding-right: 0.4em;
-		background-color: $color-primary;
-	}
 }
 
 @include icon("article");

@@ -4,6 +4,29 @@ body {
 
 a {
 	text-decoration: none;
+	color: $color-primary;
+	transition: 0.1s linear color;
+
+	&:hover {
+		color: lighten($color-primary, 20%);
+
+		.icon {
+			background-color: lighten($color-primary, 20%);
+		}
+	}
+
+	.icon {
+		transition: 0.1s linear background-color;
+		background-color: $color-primary;
+
+		&:first-child {
+			padding-right: 0.2em;
+		}
+
+		&:last-child {
+			padding-left: 0.2em;
+		}
+	}
 }
 
 .container {
@@ -37,5 +60,32 @@ a {
 @mixin icon($name, $filename: $name) {
 	.icon-#{$name} {
 		mask-image: url("../images/icon-#{$filename}.svg");
+	}
+}
+
+@include icon("code");
+
+footer {
+	font-size: em(16);
+	color: #858999;
+	margin-top: 0em;
+	padding: 4em 0;
+
+	// right now, the footer content is narrow enough even for an iPhone SE
+	// @include size-med() {
+		display: flex;
+	// }
+
+	> div {
+		margin: em(8, 16) 0;
+
+		// @include size-med() {
+			margin: 0;
+			flex: 1;
+
+			&:last-child {
+				text-align: right;
+			}
+		// }
 	}
 }
