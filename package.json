@@ -2,7 +2,7 @@
 	"name": "johnshammas.com",
 	"version": "1.0.0",
 	"description": "My personal website",
-	"main": "src/index.js",
+	"main": "src/scripts/index.js",
 	"dependencies": {
 		"copy-webpack-plugin": "^6.1.1",
 		"webpack": "^4.44.2",

@@ -1,23 +1,42 @@
-<section>
-	<div class="section-label">Countries</div>
-	<p class="section-desc">I’ve helped companies of all stages launch products in their local markets around the world.</p>
-	<div class="home-countries">
-		<div class="home-countries-list">
-			<ul>
-				<li>New&nbsp;York</li>
-				<li>San&nbsp;Francisco</li>
-				<li>London</li>
-				<li>Hong Kong</li>
-				<li>Singapore</li>
-				<li>Sydney</li>
-				<li>Melbourne</li>
-				<li>Amsterdam</li>
-				<li>Saõ&nbsp;Paulo</li>
-			</ul>
-		</div>
-		<div class="home-countries-map">
-			<div class="home-countries-map-base"></div>
-			<div class="home-countries-map-overlay -animated"></div>
-		</div>
+<section class="home-speaking">
+	<div class="section-label">Speaking & Media</div>
+	<p class="section-desc">I love pitching and presenting—from the needs of retail investors worldwide, to my thoughts on how to start freelancing before leaving school.</p>
+	<div class="home-speaking-timeline">
+		<% /*
+			This is a rudimentary way of presenting this data, and pretty unstructured, but it gets the job done while the list of data is still small
+		*/ %>
+		<% for (const event of [
+			["2020", "Business Insider", "Quoted on fractional shares", "https://www.businessinsider.com/fidelity-interactive-brokers-apex-drivewealth-on-fractional-shares-2020-2", "article"],
+			["2019", "Tearsheet", "Accessing the uninvested population", "https://tearsheet.co/modern-banking-experience/drivewealths-john-shammas-were-accessing-the-uninvested-population-around-the-world/", "podcast"],
+			["2019", "In|Vest", "DriveWealth Demo", "https://www.youtube.com/watch?v=vd64ZrL4zFo", "video"],
+			["2017", "FinDEVr", "DriveWealth Demo", "https://www.youtube.com/watch?v=3ztez8-UtRA&feature=youtu.be", "video"],
+			["2017", "Propelify", "Introducing fractional shares"],
+			["2016", "NJ Tech Meetup", "Introducing DriveWealth", "https://youtu.be/pJpFyjDBai4", "video"],
+			["2015", "NJ Association of Schools Techspo", "From High School to the Workplace: A 5 Minute Daily Drive", "https://youtu.be/1mVPgP8kgnE", "video"],
+			["2014", "NJ.com", "A boy ahead of his time", "https://www.nj.com/news/2014/12/nj_computer_genius_a_boy_ahead_of_his_time_di_ionno.html", "article"],
+			["2013", "TedXNavesink", "Software development is the new Home Economics", "https://www.youtube.com/watch?v=tM_ehhs1O_k", "video"],
+		]) { %>
+			<div class="home-speaking-item">
+				<div class="home-speaking-item-date"><%= event[0] %></div>
+				<div class="home-speaking-item-desc">
+					<div class="home-speaking-item-name"><%= event[1] %></div>
+					<div class="home-speaking-item-talk"><%= event[2] %></div>
+					<% if (event[3]) { %>
+						<div class="home-speaking-item-link">
+							<a href="<%= event[3] %>">
+								<span class="icon icon-<%= event[4] %>"></span>
+								<%=
+									{
+										article: "Read article",
+										podcast: "Listen to podcast",
+										video: "Watch video"
+									}[event[4]] || "View link"
+								%>
+							</a>
+						</div>
+					<% } %>
+				</div>
+			</div>
+		<% } %>
 	</div>
 </section>

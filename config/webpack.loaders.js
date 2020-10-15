@@ -1,3 +1,4 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const styleLoader = {
@@ -58,7 +59,7 @@ const partialsRule = {
 };
 
 const imagesRule = {
-	test: /\.(png|jpe?g|gif)$/i,
+	test: /images\/.+\.(png|jpe?g|gif|svg)$/i,
 	use: [imagesLoader],
 };
 

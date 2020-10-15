@@ -236,3 +236,69 @@ section {
 		}
 	}
 }
+
+.home-speaking-timeline {
+	@include size-lg() {
+		column-count: 2;
+		column-gap: em(60);
+		column-rule-width: 0;
+		column-break-inside: avoid;
+	}
+}
+
+.home-speaking-item {
+	margin: em(20) 0;
+
+	@include size-med() {
+		display: flex;
+	}
+
+	@include size-lg() {
+		margin: 0;
+		padding-bottom: em(
+			30
+		); // switching to padding with the columns because margin will sometimes add spacing to the top of columns from previous items
+	}
+}
+
+.home-speaking-item-date {
+	@include text-style-secondary();
+	color: #858999;
+	font-size: em(16);
+
+	@include size-med() {
+		margin-right: em(20, 16);
+	}
+}
+
+.home-speaking-item-desc {
+	flex: 1;
+}
+
+.home-speaking-item-name {
+	font-size: em(19);
+}
+
+.home-speaking-item-talk {
+	font-size: em(16);
+	color: #858999;
+}
+
+.home-speaking-item-link {
+	// font-weight: 700;
+	font-size: em(16);
+	margin-top: em(10);
+
+	a {
+		color: $color-primary;
+	}
+
+	.icon {
+		padding-right: 0.4em;
+		background-color: $color-primary;
+	}
+}
+
+@include icon("article");
+@include icon("podcast");
+@include icon("video");

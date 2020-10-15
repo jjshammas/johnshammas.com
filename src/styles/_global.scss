@@ -2,6 +2,10 @@ body {
 	background-color: $color-bg;
 }
 
+a {
+	text-decoration: none;
+}
+
 .container {
 	margin: 0 auto;
 	padding: 0 20px;
@@ -16,5 +20,22 @@ body {
 		padding: 0 80px;
 		padding: 0 6vw;
 		max-width: $breakpoint-xl - 160px;
+	}
+}
+
+.icon {
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	background-color: white;
+	vertical-align: middle;
+	transform: translateY(-8%);
+	mask-size: auto 100%; // mask sizing based on the height means you can easily add padding left/right for inserting icons into text, without ruining the sizing
+	mask-repeat: no-repeat;
+}
+
+@mixin icon($name, $filename: $name) {
+	.icon-#{$name} {
+		mask-image: url("../images/icon-#{$filename}.svg");
 	}
 }
