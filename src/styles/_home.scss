@@ -108,14 +108,14 @@ section {
 
 .home-role-images-positioner {
 	flex: 1;
-	border-radius: 8px;
-	box-shadow: 0 8px 34px rgba(0, 0, 0, 0.2);
 
 	> div {
 		width: 100%;
 		padding-bottom: 141.49%; // original size is 241x341
 		background-repeat: no-repeat;
 		background-size: 100%;
+		border-radius: 8px;
+		box-shadow: 0 8px 34px rgba(0, 0, 0, 0.2);
 	}
 
 	&:nth-child(1) {
@@ -216,12 +216,12 @@ section {
 	background-size: 100%;
 
 	@include image("../images/map-colored-overlay");
+}
 
-	&.-animated {
-		// steps looks slightly better, but browser support is meh
-		animation: reveal-map-overlay 2s 1s forwards;
-		animation: reveal-map-overlay 2s 1s steps(50) forwards;
-	}
+.home-countries-map.-animated .home-countries-map-overlay {
+	// steps looks slightly better, but browser support is meh
+	animation: reveal-map-overlay 2s 0s forwards;
+	animation: reveal-map-overlay 2s 0s steps(50) forwards;
 }
 
 .home-bio {
