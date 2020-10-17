@@ -1,5 +1,6 @@
 let map = null;
 let roleScreens = null;
+let roleScreensYPos = null;
 
 const registerEmailCopier = function () {
 	const copier = document.getElementById("email-copier");
@@ -17,6 +18,17 @@ const registerEmailCopier = function () {
 	});
 };
 
+const getDistanceFromTop = function (element) {
+	let y = 0;
+
+	while (element) {
+		y += element.offsetTop - element.scrollTop + element.clientTop;
+		element = element.offsetParent;
+	}
+
+	return y;
+};
+
 const onLoad = function () {
 	const mapElement = document.getElementById("home-map");
 	map = mapElement;
@@ -25,6 +37,8 @@ const onLoad = function () {
 	roleScreens = Array.from(roleScreenContainers).map(function (container) {
 		return container.children[0];
 	});
+	// Safari calculates offsetTop for this element correctly, but Chrome assumes it from its parent (0). So, we have to loop through each of the parents to get the real distance from the top :(
+	roleScreensYPos = getDistanceFromTop(roleScreens[0]);
 
 	registerEmailCopier();
 };
@@ -47,7 +61,7 @@ const performMapEnhancements = function (scrollPos, windowHeight) {
 const ROLE_SCREENS_MAX_MOVEMENT = 0.08;
 const performCurrentRoleEnhancements = function (scrollPos, windowHeight) {
 	// this is when the boxes are starting to enter the viewport
-	const startScrollPos = roleScreens[0].offsetTop;
+	const startScrollPos = roleScreensYPos;
 	// this is when the boxes have fully exited the viewport
 	const endScrollPos = startScrollPos + roleScreens[0].offsetHeight + windowHeight;
 
