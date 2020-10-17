@@ -44,6 +44,15 @@ header {
 	@include size-lg() {
 		margin-left: em(50, 16);
 	}
+
+	&.-with-tooltip {
+		position: relative;
+
+		&:hover .header-tooltip {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+	}
 }
 
 .header-location {
@@ -53,3 +62,56 @@ header {
 		display: block;
 	}
 }
+
+.header-tooltip {
+	background-color: #3f4350;
+	color: #c9ccd6;
+	font-size: em(16);
+	position: absolute;
+	top: 150%;
+	left: 50%;
+	transform: translateX(-50%) translateY(10%);
+	font-family: $font-primary;
+	letter-spacing: normal;
+	padding: 0.7em 1.1em;
+	white-space: nowrap;
+	border-radius: 10px;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	user-select: none;
+	pointer-events: none;
+	transition: 0.3s ease transform, 0.3s ease opacity;
+
+	&::after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid #3f4350;
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+}
+
+.email-copier {
+	cursor: pointer;
+
+	.email-copier-posttext {
+		display: none;
+	}
+
+	&.-copied {
+		.email-copier-pretext {
+			display: none;
+		}
+
+		.email-copier-posttext {
+			display: inline;
+		}
+	}
+}
+

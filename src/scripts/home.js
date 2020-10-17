@@ -1,6 +1,22 @@
 let map = null;
 let roleScreens = null;
 
+const registerEmailCopier = function () {
+	const copier = document.getElementById("email-copier");
+	const anchor = copier.querySelector("a");
+	const address =
+		anchor.getAttribute("data-user") +
+		"@" +
+		anchor.getAttribute("data-host") +
+		"." +
+		anchor.getAttribute("data-tld");
+
+	copier.addEventListener("click", function () {
+		navigator.clipboard.writeText(address);
+		copier.classList.add("-copied");
+	});
+};
+
 const onLoad = function () {
 	const mapElement = document.getElementById("home-map");
 	map = mapElement;
@@ -9,7 +25,8 @@ const onLoad = function () {
 	roleScreens = Array.from(roleScreenContainers).map(function (container) {
 		return container.children[0];
 	});
-	console.log(roleScreens);
+
+	registerEmailCopier();
 };
 
 const MAP_SCREEN_BOTTOM_OFFSET_PERCENT = 0.2;
@@ -43,8 +60,6 @@ const performCurrentRoleEnhancements = function (scrollPos, windowHeight) {
 		-1 * ROLE_SCREENS_MAX_MOVEMENT + progress * (ROLE_SCREENS_MAX_MOVEMENT * 2);
 	roleScreens[0].style.transform = "translateZ(0) translateY(" + 100 * transformAmount + "%)";
 	roleScreens[1].style.transform = "translateZ(0) translateY(" + -100 * transformAmount + "%)";
-
-	console.log(roleScreens[0], "translateY(" + 100 * transformAmount + ")");
 };
 
 const scrollListener = function (scrollPos) {

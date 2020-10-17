@@ -3,12 +3,20 @@
 		<%- require("svg-inline-loader?classPrefix=logo-!../favicon.svg") %>
 	</div>
 	<div class="header-item header-location">New Jersey, USA</div>
-	<div class="header-item">
+	<div class="header-item email-copier -with-tooltip" id="email-copier">
 		<a
 			class="email"
 			data-user="john"
 			data-host="johnshammas"
 			data-tld="com"
 		></a>
+		<div class="header-tooltip">
+			<span class="email-copier-pretext">
+				Click to copy
+			</span>
+			<span class="email-copier-posttext">
+				Copied!
+			</span>
+		</div>
 	</div>
 </header>
