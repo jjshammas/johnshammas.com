@@ -191,19 +191,25 @@ section {
 		margin-bottom: em(40);
 		padding: 0;
 		text-align: center;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
 
 		@include size-lg() {
 			text-align: left;
 			margin-bottom: 0;
+			display: block;
 		}
 	}
 
 	li {
 		display: inline;
 		list-style-type: none;
-		margin: 0 em(10);
+		margin: 0 em(16);
 		padding: 0;
 		line-height: 1.7;
+		white-space: nowrap;
 
 		@include size-lg() {
 			display: block;
